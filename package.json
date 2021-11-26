@@ -17,12 +17,13 @@
     "@nuxtjs/yandex-metrika": "^1.0.3",
     "bootstrap": "^4.4.1",
     "jquery": "^3.5.0",
-    "node-sass": "^4.13.1",
     "nuxt": "^2.0.0",
     "popper.js": "^1.16.1",
-    "sass-loader": "^8.0.2",
-    "v-click-outside": "^3.0.1",
-    "webpack": "^4.42.1"
+    "v-click-outside": "^3.0.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "sass-loader": "^8.0.2",
+    "sass": "^1.43.5",
+    "webpack": "^4.42.1"
+  }
 }
