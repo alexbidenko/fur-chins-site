@@ -5,7 +5,7 @@
 }
 .information-nav-foreground {
   height: 150px;
-  background: rgba(0, 0, 0, .7);
+  background: rgba(0, 0, 0, .5);
 
   transition-property: background;
   transition-duration: .3s;
@@ -25,14 +25,14 @@
   line-height: 50px;
   background: rgba(0, 0, 0, .9);
   font-family: 'Roboto', Tahoma, "sans-serif";
-  font-weight: 200;
+  font-weight: 300;
   font-size: 18px;
 
   transition-property: background;
   transition-duration: .3s;
 }
 .information-nav-block:hover .information-nav-foreground {
-  background: rgba(0, 0, 0, .3);
+  background: rgba(0, 0, 0, .0);
 }
 .information-nav-block:hover .information-nav-title {
   background: rgba(0, 0, 0, .6);

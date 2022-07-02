@@ -32,6 +32,7 @@
   text-align: center;
   border: 0;
   cursor: pointer;
+  text-decoration: none;
 
   transition-property: background;
   transition-duration: .3s;

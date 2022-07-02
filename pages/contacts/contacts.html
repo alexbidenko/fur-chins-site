@@ -5,24 +5,24 @@
       <form class="col-12 col-md-6 pt-2" @submit.prevent="sendOrderMessage">
         <label>
           <span>Ваше имя</span>
-          <input type="text" v-model="userName">
+          <input type="text" v-model="userName" autocomplete="name">
         </label>
         <label>
           <span>Ваш номер телефона</span>
-          <input type="text" v-model="userPhone">
+          <input type="text" v-model="userPhone" autocomplete="tel">
         </label>
         <label>
           <span>Ваш email</span>
-          <input type="text" v-model="userEmail">
+          <input type="text" v-model="userEmail" autocomplete="email">
         </label>
         <label>
           <span>Тема сообщения</span>
           <input type="text" v-model="userTitle">
         </label>
         <label @click="userAddBasket = !userAddBasket">
-          <div class="checkbox">
+          <span class="checkbox">
             <img v-if="userAddBasket" src="/assets/main/checkbox.png" class="img-fluid d-block" alt="Checkbox">
-          </div>
+          </span>
           <span>Прикрепить к письму содержимое корзины</span>
         </label>
         <label>
@@ -30,12 +30,18 @@
           <textarea style="height: 200px;" v-model="userMessage"></textarea>
         </label>
         <span class="contacts-send-button-shadow">
-        <button type="submit" class="contacts-send-button"
-                :disabled="!(!!userName && !!userPhone && !!userEmail && !!userTitle && !!userMessage)"
-        >Отправить сообщение</button>
+        <button
+          type="submit"
+          class="contacts-send-button"
+          :disabled="!(userName && userPhone && userEmail && userTitle && userMessage)"
+        >
+          Отправить сообщение
+        </button>
       </span>
       </form>
-      <div class="col-6 p-0 d-none d-md-block" style="background: url('/assets/backcall/Image1.jpg') no-repeat center / cover"></div>
+      <div class="col-6 p-0 d-none d-md-block position-relative" style="background: url('/assets/backcall/contacts.jpg') no-repeat center / cover">
+        <div class="image-overflow" />
+      </div>
     </div>
   </div>
 </div>

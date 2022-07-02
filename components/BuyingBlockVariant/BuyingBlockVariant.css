@@ -1,5 +1,6 @@
 .costs-cell {
   cursor: pointer;
+  height: 120px;
 }
 .costs-cell:first-child {
   border-bottom: 1px solid white;
@@ -10,6 +11,9 @@
 .costs-animation {
   transition-property: background;
   transition-duration: .3s;
+}
+.costs-cell .costs-animation {
+  height: 100%;
 }
 .costs-animation:hover {
   background: rgba(255, 255, 255, .2);

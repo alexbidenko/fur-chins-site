@@ -36,6 +36,7 @@ export default {
   */
   css: [
     'bootstrap/dist/css/bootstrap.css',
+    '~/assets/styles.css',
   ],
   /*
   ** Plugins to load before mounting the App
@@ -57,8 +58,6 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv',
     [
       '@nuxtjs/yandex-metrika',
       {

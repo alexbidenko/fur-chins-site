@@ -11,19 +11,17 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.3.6",
-    "@nuxtjs/dotenv": "^1.4.0",
-    "@nuxtjs/pwa": "^3.0.0-0",
-    "@nuxtjs/yandex-metrika": "^1.0.3",
-    "bootstrap": "^4.4.1",
-    "jquery": "^3.5.0",
-    "nuxt": "^2.0.0",
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/pwa": "^3.3.5",
+    "@nuxtjs/yandex-metrika": "^1.4.0",
+    "bootstrap": "^4.6.1",
+    "jquery": "^3.6.0",
+    "nuxt": "^2.15.8",
     "popper.js": "^1.16.1",
-    "v-click-outside": "^3.0.1"
+    "v-click-outside": "^3.2.0"
   },
   "devDependencies": {
-    "sass-loader": "^8.0.2",
-    "sass": "^1.43.5",
-    "webpack": "^4.42.1"
+    "sass": "^1.53.0",
+    "sass-loader": "^10.3.0"
   }
 }

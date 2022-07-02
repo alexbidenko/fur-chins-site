@@ -48,7 +48,9 @@ export default {
           this.userMessage = '';
           alert('Сообщение успешно отправлено!');
         }
-      );
+      ).catch(() => {
+        alert('Во время отправки сообщения произошла ошибка :(');
+      });
     },
     ...mapActions([
       'sendMessage'
