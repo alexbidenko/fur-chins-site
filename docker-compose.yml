@@ -5,10 +5,22 @@ services:
     restart: unless-stopped
     container_name: fur_chins
     build: .
-    stdin_open: true
-    tty: true
+    networks:
+      - server
+      - app_network
+
+  server:
+    restart: unless-stopped
+    build: mail
+    expose:
+      - 8000
+    environment:
+      EMAIL_PASSWORD: ${EMAIL_PASSWORD}
+    networks:
+      - app_network
 
 networks:
-  default:
-    external:
-      name: server
+  app_network:
+    driver: bridge
+  server:
+    external: true

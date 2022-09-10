@@ -33,7 +33,7 @@
         <button
           type="submit"
           class="contacts-send-button"
-          :disabled="!(userName && userPhone && userEmail && userTitle && userMessage)"
+          :disabled="!(userName && userPhone && userEmail && userTitle && userMessage) || isRequest"
         >
           Отправить сообщение
         </button>

@@ -1,6 +1,6 @@
 # fur_chins_web
 
-> Aliance of breaders fur chinchillas
+> Alliance of breeders fur chinchillas
 
 ## Build Setup
 

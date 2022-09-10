@@ -31,3 +31,4 @@ jobs:
         run: docker-compose up -d --build
         env:
           DOCKER_HOST: ssh://${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}

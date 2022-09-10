@@ -1,6 +1,6 @@
 const actions = {
   sendMessage(context, data) {
-    return this.$axios.$post('https://fur-chins.ru/assets/send-message.php', data);
+    return this.$axios.$post('https://fur-chins.ru/api/mail', data);
   },
 };
 

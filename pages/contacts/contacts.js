@@ -4,12 +4,12 @@ export default {
 
   head() {
     return {
-      title: 'Aliance of breaders fur chinchillas - Связаться с нами',
+      title: 'Alliance of breeders fur chinchillas - Связаться с нами',
       meta: [
-        {hid: 'keywords', name: 'keywords', content: 'Aliance of breaders fur chinchillas, связь, обратная связь, позвонить, email, форма связи, узнать больше, купить шиншилл, купить товары для шиншилл'},
-        {hid: 'description', name: 'description', content: 'Связаться с нами (Aliance of breaders fur chinchillas) для получения большей информации или для оформления покупки'},
-        {hid: 'og:title', property: 'og:title', content: 'Aliance of breaders fur chinchillas - Связаться с нами'},
-        {hid: 'og:description', property: 'og:description', content: 'Связаться с нами (Aliance of breaders fur chinchillas) для получения большей информации или для оформления покупки'}
+        {hid: 'keywords', name: 'keywords', content: 'Alliance of breeders fur chinchillas, связь, обратная связь, позвонить, email, форма связи, узнать больше, купить шиншилл, купить товары для шиншилл'},
+        {hid: 'description', name: 'description', content: 'Связаться с нами (Alliance of breeders fur chinchillas) для получения большей информации или для оформления покупки'},
+        {hid: 'og:title', property: 'og:title', content: 'Alliance of breeders fur chinchillas - Связаться с нами'},
+        {hid: 'og:description', property: 'og:description', content: 'Связаться с нами (Alliance of breeders fur chinchillas) для получения большей информации или для оформления покупки'}
       ]
     };
   },
@@ -22,11 +22,14 @@ export default {
       userTitle: '',
       userMessage: '',
       userAddBasket: true,
+      isRequest: false,
     };
   },
 
   methods: {
     sendOrderMessage() {
+      this.isRequest = true;
+
       let message = `Сообщение с сайта fur-chins.ru:\n
 От ${this.userName}\n
 Контакты: телефон - ${this.userPhone}, email - ${this.userEmail}\n
@@ -50,6 +53,8 @@ export default {
         }
       ).catch(() => {
         alert('Во время отправки сообщения произошла ошибка :(\nВоспользуйтесь для связи почтой: furchinchillas@gmail.com');
+      }).finally(() => {
+        this.isRequest = false;
       });
     },
     ...mapActions([
