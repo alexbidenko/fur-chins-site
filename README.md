@@ -1,4 +1,4 @@
-# fur_chins_web
+# Fur Chins site
 
 > Alliance of breeders fur chinchillas
 
