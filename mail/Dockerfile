@@ -10,7 +10,7 @@ RUN GOOS=linux go build -ldflags="-s -w" -o main .
 
 FROM alpine
 
-RUN adduser server
+RUN adduser --system --uid 1001 server
 
 USER server
 
