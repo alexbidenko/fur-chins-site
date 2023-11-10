@@ -1,9 +1,4 @@
-
 export default {
-  mode: 'universal',
-  /*
-  ** Headers of the page
-  */
   head: {
     title: 'ABFC - Главная',
     htmlAttrs: {
@@ -27,33 +22,16 @@ export default {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700&amp;subset=cyrillic,cyrillic-ext' },
     ],
   },
-  /*
-  ** Customize the progress-bar color
-  */
   loading: 'components/loading.vue',
-  /*
-  ** Global CSS
-  */
   css: [
     'bootstrap/dist/css/bootstrap.css',
     '~/assets/styles.css',
   ],
-  /*
-  ** Plugins to load before mounting the App
-  */
   plugins: [
     { src: '~/plugins/ga', mode: 'client' },
     { src: '~/plugins/clickOutside', mode: 'client' },
     { src: '~/plugins/bootstrap.js', mode: 'client' },
   ],
-  /*
-  ** Nuxt.js dev-modules
-  */
-  buildModules: [
-  ],
-  /*
-  ** Nuxt.js modules
-  */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
@@ -69,20 +47,4 @@ export default {
       }
     ],
   ],
-  /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
-  axios: {
-  },
-  /*
-  ** Build configuration
-  */
-  build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend (config, ctx) {
-    }
-  }
 }

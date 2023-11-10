@@ -1,23 +1,36 @@
 version: '3.8'
 
 services:
-  fur_chins:
+  client:
     restart: unless-stopped
-    container_name: fur_chins
-    build: .
+    image: ${DOCKER_IMAGE_PROJECT}/client:latest
     networks:
       - server
       - app_network
+    deploy:
+      replicas: 1
+      update_config:
+        failure_action: rollback
+        order: start-first
+      restart_policy:
+        condition: on-failure
 
   server:
     restart: unless-stopped
-    build: mail
+    image: ${DOCKER_IMAGE_PROJECT}/server:latest
     expose:
       - 8000
     environment:
       EMAIL_PASSWORD: ${EMAIL_PASSWORD}
     networks:
       - app_network
+    deploy:
+      replicas: 1
+      update_config:
+        failure_action: rollback
+        order: start-first
+      restart_policy:
+        condition: on-failure
 
 networks:
   app_network:

@@ -1,8 +1,8 @@
-FROM golang:1.18-alpine AS build
+FROM golang:1.21-alpine AS build
 
 ENV GOPATH="/go/src"
 
-WORKDIR /go/src/application
+WORKDIR /app
 
 COPY . .
 
@@ -10,9 +10,13 @@ RUN GOOS=linux go build -ldflags="-s -w" -o main .
 
 FROM alpine
 
-WORKDIR /go/app
+RUN useradd -ms /bin/bash server
 
-COPY --from=build /go/src/application/main .
+USER server
+
+WORKDIR /app
+
+COPY --from=build --chown=server:server /app/main .
 
 EXPOSE 8080
 

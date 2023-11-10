@@ -18,7 +18,7 @@ type MailRequestBody struct {
 
 func main() {
 	r := mux.NewRouter()
-	r.HandleFunc("/api/mail", MailHandler)
+	r.HandleFunc("/api/mail", mailHandler)
 
 	headersOk := handlers.AllowedHeaders([]string{"Content-Type"})
 	originsOk := handlers.AllowedOrigins([]string{"https://fur-chins.ru"})
@@ -40,11 +40,16 @@ func sendMail(message []byte) error {
 	return smtp.SendMail(smtpHost+":"+smtpPort, auth, from, []string{"furchinchillas@gmail.com"}, message)
 }
 
-func MailHandler(w http.ResponseWriter, r *http.Request) {
+func mailHandler(w http.ResponseWriter, r *http.Request) {
 	var data MailRequestBody
 
 	if err := json.NewDecoder(r.Body).Decode(&data); err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+
+	if data.Title == "" || data.Message == "" {
+		http.Error(w, "Some fields are empty", http.StatusBadRequest)
 		return
 	}
 
