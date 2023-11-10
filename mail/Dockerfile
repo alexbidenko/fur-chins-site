@@ -10,7 +10,7 @@ RUN GOOS=linux go build -ldflags="-s -w" -o main .
 
 FROM alpine
 
-RUN useradd -ms /bin/bash server
+RUN adduser server
 
 USER server
 
