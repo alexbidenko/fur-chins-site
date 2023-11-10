@@ -9,7 +9,7 @@ on:
       - master
 
 env:
-  DOCKER_IMAGE_PROJECT: ${{ env.GITHUB_REGISTRY }}/${{ env.GITHUB_REPOSITORY }}
+  DOCKER_IMAGE_PROJECT: ghcr.io/${{ github.repository }}
 
 jobs:
   build-client:
